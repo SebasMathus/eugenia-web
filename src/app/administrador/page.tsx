@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import { Nav, Footer, ClientCarousel, VideoSection, WhatsAppIcon, WA_URL, GLOBAL_STYLES } from "../../components/eugenia";
+import { Nav, Footer, ClientCarousel, VideoSection, WhatsAppIcon, WA_URL, trackWA, GLOBAL_STYLES } from "../../components/eugenia";
 
 export default function Administrador() {
   const [activeTab, setActiveTab] = useState(0);
@@ -33,6 +32,7 @@ export default function Administrador() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              onClick={() => trackWA("admin_hero")}
               className="btn-primary px-8 py-4 rounded-xl text-base">
               <WhatsAppIcon />Adquiere tu demo
             </a>
@@ -72,6 +72,7 @@ export default function Administrador() {
                 <h3 className="text-3xl font-black mb-4">{tabs[activeTab].title}</h3>
                 <p className="text-gray-500 leading-relaxed mb-6">{tabs[activeTab].desc}</p>
                 <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                  onClick={() => trackWA("admin_modulos")}
                   className="btn-primary px-6 py-3 rounded-xl text-sm">
                   <WhatsAppIcon />Agenda un demo
                 </a>
@@ -111,6 +112,7 @@ export default function Administrador() {
           </div>
           <div className="text-center mt-10">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              onClick={() => trackWA("admin_funcionalidades")}
               className="btn-primary px-8 py-4 rounded-xl text-sm">
               <WhatsAppIcon />Quiero una demo
             </a>
@@ -155,6 +157,7 @@ export default function Administrador() {
             Agenda un demo gratuito y te mostramos cómo Eugenia puede transformar la administración de tu condominio en menos de una semana.
           </p>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+            onClick={() => trackWA("admin_cta_final")}
             className="bg-white text-blue-700 font-bold px-10 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:bg-blue-50 transition">
             <WhatsAppIcon />Agenda un demo gratis
           </a>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Nav, Footer, ClientCarousel, VideoSection, WhatsAppIcon, WA_URL, GLOBAL_STYLES } from "../components/eugenia";
+import { Nav, Footer, ClientCarousel, VideoSection, WhatsAppIcon, WA_URL, trackWA, GLOBAL_STYLES } from "../components/eugenia";
 
 const TEAM = [
   { name: "Sebastián", role: "Account Manager", img: "/Sebastian.png" },
@@ -57,6 +57,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              onClick={() => trackWA("hero")}
               className="btn-primary px-8 py-4 rounded-xl text-base">
               <WhatsAppIcon />Agenda un demo gratis
             </a>
@@ -165,6 +166,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-12">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              onClick={() => trackWA("funcionalidades")}
               className="btn-primary px-8 py-4 rounded-xl text-base">
               <WhatsAppIcon />Agenda un demo
             </a>
@@ -196,7 +198,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="rounded-3xl p-10 text-white text-center"
+          <div className="rounded-3xl p-10 text-white"
             style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-left">
@@ -226,6 +228,7 @@ export default function Home() {
             En menos de 48 horas tu condominio puede estar corriendo en Eugenia.
           </p>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+            onClick={() => trackWA("cta_mid")}
             className="btn-primary px-10 py-4 rounded-xl text-base">
             <WhatsAppIcon />Escríbenos ahora
           </a>
@@ -267,6 +270,7 @@ export default function Home() {
           <div className="text-center mt-10">
             <p className="text-gray-500 text-sm mb-4">¿Tienes otra pregunta?</p>
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+              onClick={() => trackWA("faq")}
               className="btn-primary px-7 py-3 rounded-xl text-sm">
               <WhatsAppIcon />Escríbenos por WhatsApp
             </a>
@@ -286,6 +290,7 @@ export default function Home() {
             Únete a los cientos de condominios que ya administran todo con Eugenia. Demo gratis, sin compromiso.
           </p>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+            onClick={() => trackWA("cta_final")}
             className="bg-white text-blue-700 font-bold px-10 py-4 rounded-xl text-base inline-flex items-center gap-2 hover:bg-blue-50 transition">
             <WhatsAppIcon />Agenda un demo gratis
           </a>

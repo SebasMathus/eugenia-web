@@ -4,6 +4,15 @@ import { useEffect, useRef, useState } from "react";
 
 export const WA_URL = "https://wa.me/message/PGDWRLH5HQTQI1";
 
+export function trackWA(location: string) {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "whatsapp_click", {
+      event_category: "engagement",
+      event_label: location,
+    });
+  }
+}
+
 export const CAROUSEL_LOGOS = [
   "/BosquesLomasVerdas.png",
   "/Boudica.png",
@@ -116,7 +125,8 @@ export function Nav({ activePage }: { activePage?: "residente" | "administrador"
           </a>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-semibold text-sm px-4 py-2 rounded-lg text-white transition-all hover:opacity-90"
-            style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}>
+            style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
+            onClick={() => trackWA("nav")}>
             <WhatsAppIcon />Agenda un demo
           </a>
         </div>
@@ -155,7 +165,8 @@ export function Nav({ activePage }: { activePage?: "residente" | "administrador"
             </a>
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
               className="text-center inline-flex items-center justify-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-lg text-white"
-              style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}>
+              style={{ background: "linear-gradient(135deg,#2563EB,#7C3AED)" }}
+              onClick={() => trackWA("nav_mobile")}>
               <WhatsAppIcon />Agenda un demo
             </a>
           </div>
@@ -218,12 +229,9 @@ export function Footer() {
             className="text-gray-500 text-xs hover:text-white transition-colors">
             A product by <span className="font-semibold text-gray-400">Nextia</span>
           </a>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs transition-colors"
-          >
+            onClick={() => trackWA("footer")}>
             <WhatsAppIcon />Contactar por WhatsApp
           </a>
         </div>
