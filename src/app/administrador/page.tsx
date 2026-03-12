@@ -28,7 +28,7 @@ export default function Administrador() {
             con Eugenia
           </h1>
           <p className="text-gray-500 text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            El panel más completo para gestionar tu condominio — accesos, cuotas, comunicación y documentos en un solo lugar.
+            El sistema más completo para gestionar tu condominio — accesos, cuotas, comunicación y documentos en un solo lugar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={WA_URL} target="_blank" rel="noopener noreferrer"
